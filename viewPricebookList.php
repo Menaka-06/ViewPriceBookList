@@ -22,30 +22,58 @@
             <div class="card">
                 <div class="card-header align-items-center d-flex">
                     <h4 class="card-title mb-0 flex-grow-1">Search Price Book</h4>
-                    <div class="flex-shrink-0 d-none">
+                    <div class="flex-shrink-0">
+                        <a href="<?php echo base_url();?>pricebook/listPriceBook" class="btn btn-dark btn-sm bg-gradient waves-effect waves-light text-uppercase"> <i data-feather="arrow-left"></i> Back</a>
                     </div>
                 </div>
 
                 <div class="card-body">
                     <div class="live-preview">
-                        <form action="#" method="post">
+                       
                             <div class="row gy-4">
 
                                 <div class="col-xxl-2 col-xl-3 col-md-3 col-sm-4">
                                     <div>
-                                        <label for="category_name" class="form-label "> Price Book Name</label>
-                                        <input type="text" class="form-control" id="category_name" name="category_name">
-                                        <span class="text-danger small" id="category_name_error"></span>
-                                    </div>
+                                        <label for="price_book_code" class="form-label"> Price Book Name</label>
+                                        <input type="text"  class="form-control" id="id"  name="price_book_name">
+                                       </div>
+                                       <span class="text-danger small" id="price_book_error"></span>
                                 </div>
 
                                 <div class="col-xxl-2 col-xl-3 col-md-3 col-sm-4">
                                     <div>
-                                        <label for="category_name" class="form-label "> Price Book Code</label>
-                                        <input type="text" class="form-control" id="category_name" name="category_name">
-                                        <span class="text-danger small" id="category_name_error"></span>
+                                        <label for="price_book_code" class="form-label"> Price Book Code</label>
+                                        <input type="text" class="form-control" id="id" name="price_book_code">
+                                          </div>
+                                          <span class="text-danger small" id="price_book_error"></span>
+                                </div>
+                                <div class="col-xxl-2 col-xl-3 col-md-3 col-sm-4">
+                                    <div>
+                                        <label for="price_book_code" class="form-label"> Description </label>
+                                        <input type="text" class="form-control" id="id"  name="book_description" >
+                                          </div>
+                                          <span class="text-danger small" id="price_book_error"></span>
+                                </div>
+                                <div class="col-xxl-2 col-md-3">
+                                <div>
+                                    <label for="price_book_code" class="form-label "> CreatedAt</label>
+                                    <input type="date" class="form-control" id="id" >
+                                </div>
+                            </div>
+
+                                 
+                               <div class="col-xxl-4 col-md-4">
+                                    <div>
+                                        <label for="price_book_code" class="form-label ">Status</label>
+                                        <select  class="form-control" id="id"  name="price_book_status">
+                                            <option value=" ">--Select Status--</option>
+                                            <option value="1" >Active</option>
+                                            <option value="0" >Inactive</option>
+                                        </select>
+                                        <span class="text-danger small" id="price_book_status_error"></span>
                                     </div>
                                 </div>
+
 
 
                                 <!-- 
@@ -75,7 +103,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                       
                     </div>
                 </div>
 
@@ -87,7 +115,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1"><?php echo $page_name;?> Details List</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">ProductPrice Details </h4>
                     <div class="flex-shrink-0 d-none">
                         <div class="form-check form-switch form-switch-right form-switch-md">
                             <label for="hover-rows-showcode" class="form-label text-muted">Show Code</label>
@@ -104,9 +132,7 @@
                                     <table class="table table-hover align-middle table-nowrap mb-0">
                                         <thead>
                                             <tr>
-                                                <th scope="col">Id</th>
-                                                <th scope="col">Price Book Id</th>
-                                                <th scope="col">Product Id </th>
+                                                <th scope="col">Id</th>                            
                                                 <th scope="col">Product Name</th>
                                                 <th scope="col">MRP</th>
                                                 <th scope="col">DP Price</th>
@@ -116,10 +142,8 @@
                                             <?php if(!empty($price_booklist)) { foreach($price_booklist as $PBL)   {?>
                                             <tr>
                                                 <td><?php if(!empty($PBL->id)){ echo $PBL->id; }?></td>
-                                                
-                                                
-                                                <td><?php if(!empty($PBL->pricebookId)){ echo $PBL->pricebookId; }?></td>
-                                                <td><?php if(!empty($PBL->productId)){ echo $PBL->productId; }?></td>
+                                                                                     
+                                               
                                                 <td><?php if(!empty($PBL->productName)){ echo $PBL->productName; }?></td>
                                                 <td><?php if(!empty($PBL->MRP)){ echo $PBL->MRP; }?>
                                                     
